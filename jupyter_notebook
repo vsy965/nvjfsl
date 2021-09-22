@@ -1,0 +1,301 @@
+x = int(input("Enter number"))
+fac = 1
+for y in range(1,x+1):
+    fac = fac * y
+    
+print("Factorial = ", fac)
+x = int(input("Enter number"))
+fac = 1
+for y in range(1,x+1):
+    fac = fac * y
+    
+print("Factorial = ", fac)
+Enter number5
+Factorial =  120
+d = {'a':100, 'b':20, 'c':30, 'e':20, 'k':{'x':10}, 'v':[1,2,3]}
+​
+​
+d['v']
+[1, 2, 3]
+tp=((1,2,3),7,(45,66,67),(6,7,9),[1,2,44,6],{'1':1})
+for x in tp:
+    if isinstance(x, tuple):
+        print(x)
+(1, 2, 3)
+(45, 66, 67)
+(6, 7, 9)
+emp_info = {}
+​
+while True:
+    print("1. Create Employee records")
+    print("2. Update the Employee details")
+    print("3. Delete Employee records")
+    print("4. Display")
+    print("1. Exit")
+    ch = int(input("Enter your choice[1-5]: "))
+    if ch == 1:
+        name = input("Enter the employee name: ")
+        emp_id = int(input("Enter the employee id: "))
+        ph = int(input("Enter the phone number: "))
+        tech = input("Technologies[comma separated eg: c++, Python, .Net]")
+        emp_info[emp_id] = {"name": name, "phone": ph, "tech": tech.split(',')}
+    elif ch == 2:
+        who = int(input("Whoes detaoils you want to update?, Please enter the emp_id"))
+        rec = emp_info[who]
+        for field, value in rec.items():
+            new = input('{}({})'.format(field, value))
+            emp_info[who][field] = value if new == '' else new
+    elif ch == 3:
+        who = int(input("Enter the employee id"))
+        if who in emp_info:
+            del emp_info[who]
+            print(emp_info)
+        else:
+            print("Record not found")
+    elif ch == 4:
+        print(emp_info)
+    else:
+        break
+    
+1. Create Employee records
+2. Update the Employee details
+3. Delete Employee records
+4. Display
+1. Exit
+Enter your choice[1-5]: 1
+Enter the employee name: vasu
+Enter the employee id: 101
+Enter the phone number: 7894561233
+Technologies[comma separated eg: c++, Python, .Net]C++, Pyhon, ASp.Net
+1. Create Employee records
+2. Update the Employee details
+3. Delete Employee records
+4. Display
+1. Exit
+Enter your choice[1-5]: 4
+{101: {'name': 'vasu', 'phone': 7894561233, 'tech': ['C++', ' Pyhon', ' ASp.Net']}}
+1. Create Employee records
+2. Update the Employee details
+3. Delete Employee records
+4. Display
+1. Exit
+Enter your choice[1-5]: 2
+Whoes detaoils you want to update?, Please enter the emp_id101
+name(vasu)
+phone(7894561233)
+tech(['C++', ' Pyhon', ' ASp.Net'])
+1. Create Employee records
+2. Update the Employee details
+3. Delete Employee records
+4. Display
+1. Exit
+Enter your choice[1-5]: 3
+Enter the employee id101
+{}
+1. Create Employee records
+2. Update the Employee details
+3. Delete Employee records
+4. Display
+1. Exit
+Enter your choice[1-5]: 5
+[x for x in range(10)]
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+y = [x for x in range(10) if x % 2 == 0]
+y
+[0, 2, 4, 6, 8]
+n = [1,2,3,4,5,6,7,8]
+​
+num = int(input("Enter a number for which you want to see square:"))
+squares = []
+for num in n:
+    squares.append(num**2)
+idx_pos = n.index(num)
+print(squares[idx_pos])
+    
+Enter a number for which you want to see square:5
+25
+num = int(input("Enter a number for which you want to see square:"))
+sq = [num**2 for num in n]
+idx_pos = n.index(num)
+print(sq[idx_pos])
+​
+Enter a number for which you want to see square:2
+4
+dir(n)
+{k:k**2 for k in range(1,6)}
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+tp = (45, 77, 109, 'data', ["raj", "rohan"])
+{k:tp[k] for k in range(len(tp))}
+{0: 45, 1: 77, 2: 109, 3: 'data', 4: ['raj', 'rohan']}
+{tp.index(v):v for v in tp}
+{0: 45, 1: 77, 2: 109, 3: 'data', 4: ['raj', 'rohan']}
+tp[::-1]
+(['raj', 'rohan'], 'data', 109, 77, 45)
+s = {2,4,6,8,90,88,92,91}
+type(s)
+set
+# elements in the set are unique
+# tiple can contain any data type
+# not indexed
+# can perform union, difference, intersection operations
+s.add(100)
+s1 = {1,2,3,4,5}
+s2 = {3,4,5,6,7}
+s1-s2
+{1, 2}
+# User defined code
+# include doc string in functions to give description of parameter
+# and return value and also include what it purpose
+# when used help() it returns the doc string
+# --while writing function always use mandatory parameter first then default
+# we can change default parameter sequence
+# non default argument follow the default argument--
+# if we dont know the number of positional parameter reciving we use *args insted of parameters
+# args contains data in list format
+# **kwargs is used when number of default parameters are not known
+# **kwargs is in a form of dictionary so we can acces the vaue by using the key
+def get_data(name, *args, ssd = 'yes', **kwargs):
+    print("name : ", name)
+    print("age: ", args[1])
+    print("phone: ", kwargs['phone'])
+    print("address: ", kwargs['address'])
+    print("sdsdf: ", ssd)
+    
+get_data('vasu', 25, 1111, phone=12312313, address='pune', ssd= 'no')
+name :  vasu
+age:  1111
+phone:  12312313
+address:  pune
+sdsdf:  no
+def printtill_n(num):
+    for x in range(1,num+1):
+        print(x)
+​
+num = int(input("Enter number"))
+printtill_n(num)
+Enter number5
+1
+2
+3
+4
+5
+# lambda functions
+# lambda args: expression
+# map - map(<function>, []/())
+x = lambda x: x**2
+x(100)
+10000
+def square(x):
+    return x ** 2
+list(map(square, (2,4,6,8,9)))
+[4, 16, 36, 64, 81]
+ asas = list(map(str.upper, ['python', 'is', 'fun']))
+# other way
+for w in ['python', 'is', 'fun']:
+    print(w.upper())
+PYTHON
+IS
+FUN
+def func():
+    global x1
+    x1 = 5
+    print(x1)
+func()
+5
+x1
+5
+def outer():
+    i = 10
+    j = 8
+    def inner():
+        print(i)
+        print("i am inner function")
+    def inner2():
+        print("second inner")
+    inner()
+    inner2()
+    return inner, inner2
+p = outer()
+10
+i am inner function
+second inner
+p[0]()
+10
+i am inner function
+p[1]()
+second inner
+p
+(<function __main__.outer.<locals>.inner()>,
+ <function __main__.outer.<locals>.inner2()>)
+def outer(f):
+    def inner():
+        result = f()
+        return result ** 2
+    return inner
+def num():
+    return 5
+​
+r = outer(num)
+r
+<function __main__.outer.<locals>.inner()>
+r()
+25
+@outer # decorater
+def num():
+    return 5
+num()
+25
+def outer(f):
+    def inner(n1, n2):
+        result = f(n1, n2)
+        return result ** 2
+    return inner
+​
+@outer 
+def num(n1, n2):
+    return n1 + n2 + 5
+num(19, 4)
+784
+def validate(func):
+    def validator (*args,**kwargs):
+        if len(args) > 1:
+            if args[1] == 0:
+                print("We are expecting non zero number")
+                return None
+            else:
+                power = func(args[0], args[1]) # function name can 
+                return power                    # be anything/ take function name set as argument it will 
+        else:                                   # call the mypower function
+            print("invalid args")
+    return validator
+    
+import math
+​
+@validate
+def mypower(x, y):
+    return math.pow(x,y)
+mypower(5,3)
+125.0
+list_1 = [1,2,3,4,5,6,7,8,9,10]
+list(filter(lambda x: x%2 == 0, list_1))
+[2, 4, 6, 8, 10]
+list_2 = [1,2,3,4,5,6,7,8,9]
+list(map(lambda x: pow(x,3), list_2))
+[1, 8, 27, 64, 125, 216, 343, 512, 729]
+# general purpose decorater - function with no arguments
+​
+def a_decorator_passing_arbitary_arguments(function_to_decorate):
+    def a_wrapper_accepting_arbitary_arguments(*args, **kwargs):
+        print("The positional arguments are", args)
+        print("The keyword arguments are", kwargs)
+        function_to_decorate(*args)
+        
+    return a_wrapper_accepting_arbitary_arguments
+​
+@a_decorator_passing_arbitary_arguments
+def function_with_no_arguments():
+    print("No arguments here....")
+function_with_no_arguments()
+The positional arguments are ()
+The keyword arguments are {}
+No arguments here....
